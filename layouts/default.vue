@@ -15,6 +15,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  color: #2c3e50;
+  // margin: 60px auto;
+  // width: 300px;
 }
 
 *,
@@ -23,4 +26,5 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
 </style>
