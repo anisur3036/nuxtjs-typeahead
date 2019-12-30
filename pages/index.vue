@@ -3,7 +3,7 @@
   	<div class="row">
   		<div class="col-md-6 col-md-offset-3">
 		    <div class="panel panel-default">
-		    	<div class="panel-title">User Collection 
+		    	<div class="panel-title">User Collection
 					</div>
 		    		<form role="form" @submit.prevent="addUser" method="post">
 		    			<div class="panel-body" v-for="(user, index) in users" :key="index">
@@ -75,12 +75,12 @@ export default {
   	},
 
   	addUser() {
-  		console.log(this.users);
   	}
   }
 }
 </script>	
 
 <style lang="scss">
-@import url('http://cdn.test/bootstrap.min.css');
+// @import url('http://cdn.test/bootstrap.min.css');
+
 </style>
