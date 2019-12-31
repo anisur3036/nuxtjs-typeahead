@@ -10,7 +10,7 @@
 	      <nuxt-link to="/" class="nav-link">Home</nuxt-link>
 	    </li>
 	    <li class="nav-item">
-	      <nuxt-link to="#" class="nav-link">Features</nuxt-link>
+	      <nuxt-link to="/posts" class="nav-link">Posts</nuxt-link>
 	    </li>
 	    <li class="nav-item">
 	      <!-- <a class="nav-link" href="#">Pricing</a> -->

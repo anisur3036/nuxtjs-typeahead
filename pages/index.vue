@@ -5,7 +5,7 @@
 		    <div class="panel panel-default">
 		    	<div class="panel-title">User Collection
 					</div>
-		    		<form role="form" @submit.prevent="addUser" method="post">
+		    		<form role="form" @submit.prevent="addUser" method="post" v-if="submit">
 		    			<div class="panel-body" v-for="(user, index) in users" :key="index">
 		    				<div class="form-container">
 		    					<h3>User Info {{index}}
@@ -36,7 +36,9 @@
 		    				<button type="submit" class="btn btn-primary pull-right">Submit</button>
 		    		</form>
 		    </div>
-  			
+  			<div>
+        </div>
+          <h4 v-for="user in postUsers" :key="user.name">{{ user.name }}</h4>   
   		</div>
   	</div>
   </div>
@@ -55,7 +57,8 @@ export default {
   				email: '',
   				bio: ''
   			}
-  		]
+  		],
+      postUsers: []
   	}
   },
   methods: {
@@ -75,6 +78,7 @@ export default {
   	},
 
   	addUser() {
+      this.postUsers = this.users;
   	}
   }
 }
