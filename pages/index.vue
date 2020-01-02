@@ -5,7 +5,7 @@
 		    <div class="panel panel-default">
 		    	<div class="panel-title">User Collection
 					</div>
-		    		<form role="form" @submit.prevent="addUser" method="post" v-if="submit">
+		    		<form role="form" @submit.prevent="addUser">
 		    			<div class="panel-body" v-for="(user, index) in users" :key="index">
 		    				<div class="form-container">
 		    					<h3>User Info {{index}}
@@ -28,17 +28,14 @@
 				    				<input type="text" id="email" class="form-control" placeholder="Your email" v-model="user.email">
 				    			</div>    		
 				    			<div class="form-group">
-				    				<label for="bio">Bio</label>
-				    				<textarea id="bio" class="form-control" rows="3" required="required" v-model="user.bio"></textarea>
+				    				<label for="body">Body</label>
+				    				<textarea id="body" class="form-control" rows="3" required="required" v-model="user.body"></textarea>
 				    			</div>    		
 		    				</div>
 		    			</div>
 		    				<button type="submit" class="btn btn-primary pull-right">Submit</button>
 		    		</form>
 		    </div>
-  			<div>
-        </div>
-          <h4 v-for="user in postUsers" :key="user.name">{{ user.name }}</h4>   
   		</div>
   	</div>
   </div>
@@ -55,7 +52,7 @@ export default {
   			{
   				name: '',
   				email: '',
-  				bio: ''
+  				body: ''
   			}
   		],
       postUsers: []
@@ -66,7 +63,7 @@ export default {
   		this.users.push({
   			name: '',
   			email: '',
-  			bio: ''
+  			body: ''
   		})
   	},
   	removeUser(index) {
@@ -77,8 +74,9 @@ export default {
   		}
   	},
 
-  	addUser() {
-      this.postUsers = this.users;
+  	async addUser() {
+      await this.$axios.$post(`http://api-laravel.test/api/user`, this.users)
+      this.$router.push('/users/1');
   	}
   }
 }
@@ -86,5 +84,4 @@ export default {
 
 <style lang="scss">
 // @import url('http://cdn.test/bootstrap.min.css');
-
 </style>
