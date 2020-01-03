@@ -75,7 +75,7 @@ export default {
   	},
 
   	async addUser() {
-      await this.$axios.$post(`http://api-laravel.test/api/user`, this.users)
+      await this.$axios.$post(`/user`, this.users)
       this.$router.push('/users/1');
   	}
   }

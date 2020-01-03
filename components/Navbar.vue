@@ -16,6 +16,9 @@
 	      <!-- <a class="nav-link" href="#">Pricing</a> -->
 	      <nuxt-link to="#" class="nav-link">Pricing</nuxt-link>
 	    </li>
+			<li class="nav-item">
+	      <nuxt-link to="/layout" class="nav-link">AddBulkUser</nuxt-link>
+			</li>
 	    <li class="nav-item">
 	      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 	    </li>
