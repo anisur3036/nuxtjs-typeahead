@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-sm-12">
         <h3>User Information</h3>
         <div class="card">
           <div class="card-body">
@@ -11,6 +11,7 @@
                   <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Selected</th>
                     <th scope="col">Bio</th>
                     <th scope="col">Add</th>
                     <th scope="col">Remove</th>
@@ -40,6 +41,16 @@
                           placeholder="Your email"
                           v-model="user.email"
                         />
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-group">
+                        <select class="form-control form-control-sm" v-model="user.selected">
+                          <option disabled value="#">Please select one</option>
+                          <option>A</option>
+                          <option>B</option>
+                          <option>C</option>
+                        </select>
                       </div>
                     </td>
                     <td>
@@ -81,7 +92,8 @@ export default {
         {
           name: "",
           email: "",
-          body: ""
+          body: "",
+          selected: ""
         }
       ]
     };
@@ -89,9 +101,10 @@ export default {
   methods: {
     addNewForm() {
       this.users.push({
-        name: "",
-        email: "",
-        body: ""
+        name: this.users.slice(-1).pop().name,
+        email: this.users.slice(-1).pop().email,
+        body: this.users.slice(-1).pop().body,
+        selected: this.users.slice(-1).pop().selected
       });
     },
     removeOne(index) {
@@ -102,8 +115,10 @@ export default {
         this.$router.push("/");
       }
     },
-    addUser() {
-      this.users;
+    async addUser() {
+      // await this.$axios.$post("/user", this.users);
+      // this.$router.push("/");
+      console.log(this.users);
     }
   }
 };

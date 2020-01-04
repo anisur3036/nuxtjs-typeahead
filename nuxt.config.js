@@ -39,7 +39,8 @@ export default {
   */
   css: [
     // '~assets/bulma.min.css',
-    // '~assets/app.scss',
+    // '~assets/css/tailwind.css',
+    '~assets/app.scss'
   ],
   /*
   ** Plugins to load before mounting the App
