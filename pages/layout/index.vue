@@ -90,13 +90,13 @@ export default {
     return {
       users: [
         {
-          name: "",
-          email: "",
-          body: "",
-          selected: ""
+          name: '',
+          email: '',
+          body: '',
+          selected: ''
         }
       ]
-    };
+    }
   },
   methods: {
     addNewForm() {
@@ -105,23 +105,24 @@ export default {
         email: this.users.slice(-1).pop().email,
         body: this.users.slice(-1).pop().body,
         selected: this.users.slice(-1).pop().selected
-      });
+      })
     },
     removeOne(index) {
       if (this.users.length > 1) {
-        this.users.splice(index, 1);
+        this.users.splice(index, 1)
       } else {
-        alert("Your from was cancel.");
-        this.$router.push("/");
+        alert('Your from was cancel.')
+        this.$router.push('/')
+        alert('anisur')
       }
     },
     async addUser() {
       // await this.$axios.$post("/user", this.users);
       // this.$router.push("/");
-      console.log(this.users);
+      console.log(this.users)
     }
   }
-};
+}
 </script>
 
 <style>
