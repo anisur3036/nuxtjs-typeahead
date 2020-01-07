@@ -110,13 +110,12 @@ export default {
       }
     },
 
-<<<<<<< HEAD
   	async addUser() {
-      await this.$axios.$post(`/user`, this.users),
-      this.$router.push("/users/1"),
-  	}
+      await this.$axios.$post(`/user`, this.users)
+      this.$router.push("/users/1");
+  	},
     async addUser() {
-      await this.$axios.$post(`/user`, this.users);
+      await this.$axios.$post(`/user`, this.users)
       this.$router.push('/users/1');
     }
   }

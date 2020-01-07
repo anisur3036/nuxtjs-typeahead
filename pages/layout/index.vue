@@ -117,8 +117,8 @@ export default {
       }
     },
     async addUser() {
-      // await this.$axios.$post("/user", this.users);
-      // this.$router.push("/");
+      await this.$axios.$post("/user", this.users);
+      this.$router.push("/");
       console.log(this.users)
     }
   }
