@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import ToggleInput from "@/components/ToggleInput.vue";
+import ToggleInput from '@/components/ToggleInput.vue'
 
 export default {
   components: {
@@ -42,19 +42,19 @@ export default {
   },
   data() {
     return {
-      email: "jane@example.com",
+      email: 'jane@example.com',
       newsletter: false
-    };
+    }
   },
   methods: {
     submit() {
-      console.log("Submitting form...", {
+      console.log('Submitting form...', {
         email: this.email,
         newsletter: this.newsletter
-      });
+      })
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .toggle {
@@ -78,13 +78,13 @@ export default {
   height: 100%;
   width: 100%;
   background-color: #dae1e7;
-  content: "";
+  content: '';
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
-.toggle[aria-checked="true"]:before {
+.toggle[aria-checked='true']:before {
   background-color: #3490dc;
 }
 .toggle:after {
@@ -99,7 +99,7 @@ export default {
   border-color: #dae1e7;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  content: "";
+  content: '';
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
@@ -107,7 +107,7 @@ export default {
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
-.toggle[aria-checked="true"]:after {
+.toggle[aria-checked='true']:after {
   -webkit-transform: translateX(1.5rem);
   transform: translateX(1.5rem);
 }
