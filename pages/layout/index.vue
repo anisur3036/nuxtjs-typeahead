@@ -85,6 +85,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -93,7 +94,7 @@ export default {
           name: '',
           email: '',
           body: '',
-          selected: ''
+          selected: '',
         }
       ]
     }
@@ -104,7 +105,7 @@ export default {
         name: this.users.slice(-1).pop().name,
         email: this.users.slice(-1).pop().email,
         body: this.users.slice(-1).pop().body,
-        selected: this.users.slice(-1).pop().selected
+        selected: this.users.slice(-1).pop().selected,
       })
     },
     removeOne(index) {
@@ -117,8 +118,8 @@ export default {
       }
     },
     async addUser() {
-      await this.$axios.$post("/user", this.users);
-      this.$router.push("/");
+      await this.$axios.$post("/user", this.users)
+      this.$router.push("/")
       console.log(this.users)
     }
   }
